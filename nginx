@@ -1,0 +1,11 @@
+# Nginx 配置範例
+server {
+    listen 80;
+    server_name hkyoga.hk www.hkyoga.hk;
+    root /var/www/hkyoga;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
