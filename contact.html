@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <title>聯絡我們 | 香港瑜伽聯盟</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+</head>
+<body>
+    <!-- 共用導航 -->
+
+    <div class="contact-container">
+        <section class="contact-form">
+            <h2>線上查詢</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">姓名</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">電郵</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">訊息內容</label>
+                    <textarea id="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">傳送訊息</button>
+            </form>
+        </section>
+
+        <section class="map-section">
+            <div id="hkMap" style="height:400px;"></div>
+        </section>
+    </div>
+
+    <!-- 共用頁腳 -->
+    <script>
+        // 香港地圖初始化
+        function initMap() {
+            const hkCenter = {lat: 22.2793278, lng: 114.1628131};
+            const map = new google.maps.Map(document.getElementById('hkMap'), {
+                zoom: 15,
+                center: hkCenter
+            });
+            new google.maps.Marker({
+                position: hkCenter,
+                map: map,
+                title: '香港瑜伽聯盟總部'
+            });
+        }
+        initMap();
+    </script>
+</body>
+</html>
