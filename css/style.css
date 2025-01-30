@@ -1,0 +1,57 @@
+/* 共用基礎樣式 */
+:root {
+    --primary-color: #2A5C84;
+    --secondary-color: #EBAFA8;
+    --text-color: #333333;
+}
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    color: var(--text-color);
+    line-height: 1.8;
+}
+
+.main-nav {
+    background: rgba(255,255,255,0.97);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+}
+
+.logo {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .main-nav ul {
+        display: none;
+        position: absolute;
+        background: white;
+        width: 100%;
+        top: 60px;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+}
+
+/* 各頁面專用樣式 */
+.about-page .timeline {
+    border-left: 3px solid var(--primary-color);
+    padding-left: 2rem;
+}
+
+.membership-portal {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+}
+
+.contact-form {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 10px;
+}
